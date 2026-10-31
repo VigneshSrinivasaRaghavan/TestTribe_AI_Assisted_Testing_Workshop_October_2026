@@ -1,0 +1,34 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="API Automation Suite" verbose="1">
+    <listeners>
+        <listener class-name="com.testtribe.api.utils.TestListener"/>
+    </listeners>
+    <test name="Smoke">
+        <packages>
+            <package name="com.testtribe.api.smoke"/>
+            <!-- Add more packages here as the suite grows, e.g. com.testtribe.api.tests -->
+        </packages>
+    </test>
+    <test name="GET Tests">
+        <classes>
+            <class name="com.testtribe.api.tests.GetBookingTest"/>
+        </classes>
+    </test>
+    <test name="POST Tests">
+        <classes>
+            <class name="com.testtribe.api.tests.AuthTest"/>
+            <class name="com.testtribe.api.tests.CreateBookingTest"/>
+        </classes>
+    </test>
+    <test name="PUT PATCH DELETE Tests">
+        <classes>
+            <class name="com.testtribe.api.tests.UpdateBookingTest"/>
+            <class name="com.testtribe.api.tests.DeleteBookingTest"/>
+        </classes>
+    </test>
+    <test name="POJO Tests">
+        <classes>
+            <class name="com.testtribe.api.pojo.PojoSerializationTest"/>
+        </classes>
+    </test>
+</suite>
